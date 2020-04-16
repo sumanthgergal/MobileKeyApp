@@ -17,10 +17,12 @@ namespace MobileKey.Axeos.AppAutomation
 
         internal  ConfigurationClass()
         {
+
         }
         public void BrowserApp()
         {
 
+            
             driver = new ChromeDriver();
 
 
