@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MobileKey.Axeos.AppAutomation.Elements
+namespace MobileKey.Axeos.AppAutomation
 {
     internal class MKDeviceListELements
     {
