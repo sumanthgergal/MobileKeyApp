@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
+using System.Collections.Specialized;
 
 namespace MobileKey.Axeos.AppAutomation
 {
@@ -17,7 +18,7 @@ namespace MobileKey.Axeos.AppAutomation
 
         internal  ConfigurationClass()
         {
-
+            //NameValueCollection collection = (NameValueCollection)ConfigurationManager.
         }
         public void BrowserApp()
         {
