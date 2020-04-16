@@ -2,6 +2,7 @@ C:\GIT\MobileKey\localserver\MobileKey.AppAutomation\MobileKey.AppAutomation\obj
 C:\GIT\MobileKey\localserver\MobileKey.AppAutomation\MobileKey.AppAutomation\obj\Debug\netstandard2.0\MobileKey.AppAutomation.csproj.CoreCompileInputs.cache
 C:\GIT\MobileKey\localserver\MobileKey.AppAutomation\MobileKey.AppAutomation\obj\Debug\netstandard2.0\MobileKey.AppAutomation.AssemblyInfoInputs.cache
 C:\GIT\MobileKey\localserver\MobileKey.AppAutomation\MobileKey.AppAutomation\obj\Debug\netstandard2.0\MobileKey.AppAutomation.AssemblyInfo.cs
+C:\GIT\MobileKey\localserver\MobileKey.AppAutomation\MobileKey.AppAutomation\bin\Debug\netstandard2.0\MobileKey.AppAutomation.dll.config
 C:\GIT\MobileKey\localserver\MobileKey.AppAutomation\MobileKey.AppAutomation\bin\Debug\netstandard2.0\MobileKey.AppAutomation.deps.json
 C:\GIT\MobileKey\localserver\MobileKey.AppAutomation\MobileKey.AppAutomation\bin\Debug\netstandard2.0\MobileKey.AppAutomation.dll
 C:\GIT\MobileKey\localserver\MobileKey.AppAutomation\MobileKey.AppAutomation\bin\Debug\netstandard2.0\MobileKey.AppAutomation.pdb
