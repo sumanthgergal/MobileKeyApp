@@ -4,14 +4,22 @@ using NUnit.Framework;
 namespace MobileKey.Axeos.AppAutomation
 {
     [TestFixture]
-    public class SetUp
+    internal class SetUp : BaseSetUp
     {
 
-        [OneTimeSetUp]
-        public void VerifyMatricPageUI()
+        [SetUp]
+        public void Login()
         {
-
+            mobileKey.LaunchApplication();
+            
         }
+
+        [TearDown]
+        public void EndClass()
+        {
+            mobileKey.QuitApplication();
+        }
+
 
 
     }

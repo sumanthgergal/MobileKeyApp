@@ -8,36 +8,94 @@ using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
 using System.Collections.Specialized;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
 
 namespace MobileKey.Axeos.AppAutomation
 {
     internal class ConfigurationClass : AppType
     {
-        public static IWebDriver driver;
+        string browser = "browserAppSettings";
+        string mobile = "mobileAppSettings";
+        string app = "apptype";
+        string[] keys = null;
+        internal AppTypeData application;
+        public IWebDriver driver;
+        internal string browserURL = null;
+        internal bool isBrowser=false, isAndroid=false, isIOS=false;
         //public string App = ConfigurationManager.;
 
         internal  ConfigurationClass()
         {
-            //NameValueCollection collection = (NameValueCollection)ConfigurationManager.
+    
+            keys = valueCollection("apptype");
+            foreach (var i in keys)
+            {
+                if (i.Equals("Browser", StringComparison.OrdinalIgnoreCase))
+                {
+                    application = AppTypeData.Browser;
+                    isBrowser = true;
+                    keys = valueCollection("browserAppSettings");
+                    foreach (var a in keys)
+                    {
+                        if (a.Equals("Chrome", StringComparison.OrdinalIgnoreCase)
+                            || a.Equals("Firefox", StringComparison.OrdinalIgnoreCase)
+                            || a.Equals("IE", StringComparison.OrdinalIgnoreCase))
+                        {
+                            driver = BrowserApp(a);
+                        }
+                    }
+                }
+                else if(i.Equals("Mobile", StringComparison.OrdinalIgnoreCase))
+                {
+                    keys = valueCollection("mobileAppSettings");
+                    foreach (var a in keys)
+                    {
+                        if (a.Equals("Android", StringComparison.OrdinalIgnoreCase))
+                        {
+                            application = AppTypeData.Android;
+                            isAndroid = true;
+                        }
+                        else if (a.Equals("IOS", StringComparison.OrdinalIgnoreCase))
+                        {
+                            application = AppTypeData.IOS;
+                            isIOS = true;
+                        }
+
+                    }
+                }
+            }
+
         }
-        public void BrowserApp()
+
+
+        public string[] valueCollection(string val)
+        {
+            NameValueCollection collection=(NameValueCollection)ConfigurationManager.GetSection(val);
+            return collection.AllKeys;
+        }
+        public IWebDriver BrowserApp(string value)
+        {
+            if (value.Contains("Chrome"))
+            {
+                driver = new ChromeDriver();
+            }else if (value.Contains("Firefox"))
+            {
+                driver = new FirefoxDriver();
+            }
+            else
+            {
+                driver = new InternetExplorerDriver();
+            }
+
+            return driver;
+        }
+
+        public void MobileApp(string value)
         {
 
-            
-            driver = new ChromeDriver();
-
-
         }
 
-        public void Android()
-        {
-
-        }
-
-        public void IOS()
-        {
-
-        }
         public void LaunchAndroidApp()
         {
             //var appium = new AppiumOptions();
